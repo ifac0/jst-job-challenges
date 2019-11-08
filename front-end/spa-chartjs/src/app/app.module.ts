@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherService } from './weather.service';
+import { GrafbarComponent } from './grafbar/grafbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GrafbarComponent
   ],
   imports: [
     BrowserModule,
@@ -17,6 +19,6 @@ import { WeatherService } from './weather.service';
     HttpClientModule
   ],
   providers: [WeatherService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, GrafbarComponent]
 })
 export class AppModule { }
