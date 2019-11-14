@@ -22,9 +22,9 @@ export class GrafbarComponent implements OnInit {
   }
 
   grafHistBarra(){
-    this.weather.getHistorico()
+    this.weather.getHistorico(null)
     .subscribe(res => {
-      console.log(res)
+      //console.log(res)
 
       let temp_max = res['list'].map(res => res.main.temp_max);
       let temp_min = res['list'].map(res => res.main.temp_min);

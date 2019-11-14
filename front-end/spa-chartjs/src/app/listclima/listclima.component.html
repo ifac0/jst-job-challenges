@@ -1,0 +1,31 @@
+
+  <table class="align-middle text-truncate mb-0 table table-borderless table-hover">
+        <thead>
+        <tr>
+          <th class="text-center">Temperatura Maxima</th>
+          <th class="text-center">Temperatura Minima</th>
+          <th class="text-center">Temperatura</th>
+          <th class="text-center">O céu está</th>
+          <th class="text-center">Velocidade do vento</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let list of listas">
+            <tr>                
+                <td class="text-center">
+                        {{list.main.temp_max}}
+                </td> 
+                <td class="text-center">
+                        {{list.main.temp_min}}
+                </td> 
+                <td class="text-center">
+                        {{list.main.temp}}
+                </td> 
+                <td class="text-center">
+                        {{list.weather[0].main}} - {{list.weather[0].description}}
+                </td> 
+                <td class="text-center">
+                        {{list.wind.speed}}
+                </td>                    
+            </tr>          
+        </tbody>
+    </table>

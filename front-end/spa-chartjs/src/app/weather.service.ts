@@ -10,10 +10,14 @@ import { Observable } from 'rxjs';
 
 export class WeatherService {
 
+  appid = '&appid=b1b15e88fa797225412429c1c50c122a1';
+  local = 'Recife';
+  
+
   /*
   Fornecemos dados climáticos históricos das cidades
   */
-  private baseHistorico =  'https://samples.openweathermap.org/data/2.5/history/city?lat=-28.4833&lon=-48.9941&appid=b1b15e88fa797225412429c1c50c122a1';
+  private baseHistorico =  'https://samples.openweathermap.org/data/2.5/history/city?q=';
   /*
   Fornecemos dados sobre a poluição
   */
@@ -21,10 +25,14 @@ export class WeatherService {
   
   constructor(private http: HttpClient){
   }
-
-
-  getHistorico(): Observable<any> {
-    return this.http.get(`${this.baseHistorico}`);
+  
+  getHistorico(valor): Observable<any> {
+    console.log(valor);
+    if(valor){
+      this.local = valor;
+    }
+    console.log(`${this.baseHistorico}` + this.local + `${this.appid}`)
+    return this.http.get(`${this.baseHistorico}` + this.local + `${this.appid}`);
   }
 
 
