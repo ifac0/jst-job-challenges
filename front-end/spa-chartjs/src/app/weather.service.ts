@@ -27,11 +27,9 @@ export class WeatherService {
   }
   
   getHistorico(valor): Observable<any> {
-    console.log(valor);
     if(valor){
       this.local = valor;
     }
-    console.log(`${this.baseHistorico}` + this.local + `${this.appid}`)
     return this.http.get(`${this.baseHistorico}` + this.local + `${this.appid}`);
   }
 
