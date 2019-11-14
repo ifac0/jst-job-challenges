@@ -12,6 +12,9 @@ import { GraflinComponent } from './graflin/graflin.component';
 import { CompboxComponent } from './compbox/compbox.component';
 import { CampsearchComponent } from './campsearch/campsearch.component';
 
+import { CarouselComponent } from './carousel/carousel.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';  
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,13 +22,15 @@ import { CampsearchComponent } from './campsearch/campsearch.component';
     ListclimaComponent,
     GraflinComponent,
     CompboxComponent,
-    CampsearchComponent
+    CampsearchComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [WeatherService],
   bootstrap: [
@@ -34,7 +39,8 @@ import { CampsearchComponent } from './campsearch/campsearch.component';
               ListclimaComponent,
               GraflinComponent,
               CompboxComponent,
-              CampsearchComponent
+              CampsearchComponent,
+              CarouselComponent
             ]
 })
 export class AppModule { }
